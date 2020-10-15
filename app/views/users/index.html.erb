@@ -1,5 +1,15 @@
 <p id="notice"><%= notice %></p>
 
+<div>
+
+<%= form_with(url: "/", method: "get") do %>
+  <%= label_tag(:q, "Search for:") %>
+  <%= text_field_tag(:first_name, nil, placeholder: 'FirstName') %>
+  <%= text_field_tag(:last_name, nil, placeholder: 'LastName') %>
+  <%= text_field_tag(:url, nil, placeholder: 'URL') %>
+  <%= submit_tag("Search") %>
+<% end %>
+</div>
 <h1>Users</h1>
 
 <table>

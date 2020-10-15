@@ -4,6 +4,7 @@ class UsersController < ApplicationController
   # GET /users
   # GET /users.json
   def index
+    debugger
     @users = User.all
   end
 
