@@ -2,42 +2,33 @@
 
 <div>
 
-<%= form_with(url: "users/index", method: "get") do %>
-  <%= label_tag(:q, "Search for:") %>
-  <%= text_field_tag(:first_name, nil, placeholder: 'FirstName') %>
-  <%= text_field_tag(:last_name, nil, placeholder: 'LastName') %>
-  <%= text_field_tag(:url, nil, placeholder: 'URL') %>
+<%= form_tag(users_path, method: "get") do %>
+  <%= text_field_tag(:first_name, params[:first_name], placeholder: 'FirstName') %>
+  <%= text_field_tag(:last_name, params[:last_name], placeholder: 'LastName') %>
+  <%= text_field_tag(:url, params[:url], placeholder: 'URL') %>
   <%= submit_tag("Search") %>
 <% end %>
+
+
+
 </div>
 <h1>Users</h1>
 
 <table>
   <thead>
     <tr>
-      <th>First name</th>
-      <th>Last name</th>
-      <th>Url</th>
-      <th>Email</th>
-      <th colspan="3"></th>
+      <th>emails</th>
     </tr>
   </thead>
 
   <tbody>
-    <% @users.each do |user| %>
+    <% @emails.each do |email| %>
       <tr>
-        <td><%= user.first_name %></td>
-        <td><%= user.last_name %></td>
-        <td><%= user.url %></td>
-        <td><%= user.email %></td>
-        <td><%= link_to 'Show', user %></td>
-        <td><%= link_to 'Edit', edit_user_path(user) %></td>
-        <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= email %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
-<br>
 
-<%= link_to 'New User', new_user_path %>
+<br>
