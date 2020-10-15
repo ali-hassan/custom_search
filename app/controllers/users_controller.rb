@@ -6,7 +6,7 @@ class UsersController < ApplicationController
   def index
     @users = User.all
     @emails = []
-    if(params[:first_name] && params[:last_name] && params[:url])
+    unless(params[:first_name].blank? && params[:last_name].blank? && params[:url].blank?)
       first_name = params[:first_name]
       last_name = params[:last_name]
       url = params[:url]
