@@ -2,7 +2,7 @@
 
 <div>
 
-<%= form_with(url: "/", method: "get") do %>
+<%= form_with(url: "users/index", method: "get") do %>
   <%= label_tag(:q, "Search for:") %>
   <%= text_field_tag(:first_name, nil, placeholder: 'FirstName') %>
   <%= text_field_tag(:last_name, nil, placeholder: 'LastName') %>

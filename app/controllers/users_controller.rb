@@ -4,8 +4,13 @@ class UsersController < ApplicationController
   # GET /users
   # GET /users.json
   def index
-    debugger
     @users = User.all
+    @emails = []
+    (1..5).each do 
+      @emails << "#{params[:first_name]}.#{params[:last_name]}#{rand(252...4350)}@#{params[:url]}"
+    end
+    puts @emails
+    render 'index'
   end
 
   # GET /users/1
