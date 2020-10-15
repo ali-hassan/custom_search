@@ -16,15 +16,21 @@
 
 <table>
   <thead>
-    <tr>
-      <th>emails</th>
-    </tr>
+      <h2>Found Users</h2>
   </thead>
 
   <tbody>
-    <% @emails.each do |email| %>
+    <th>First Name</th>
+    <th>Last Name</th>
+    <th>First Name</th>
+    <th>URL</th>
+    <th>Email</th>
+    <% @users.each do |user| %>
       <tr>
-        <td><%= email %></td>
+        <td><%= user.first_name %></td>
+        <td><%= user.last_name %></td>
+        <td><%= user.url %></td>
+        <td><%= user.email %></td>
       </tr>
     <% end %>
   </tbody>
